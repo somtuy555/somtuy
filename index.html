@@ -1,1 +1,508 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ข้าวแกง109 - ร้านอาหารไทยแท้</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Sarabun:wght@300;400;500;600;700&display=swap');
+        body { font-family: 'Sarabun', sans-serif; }
+        .hero-bg {
+            background: linear-gradient(135deg, #ff6b35 0%, #f7931e 100%);
+        }
+        .card-hover {
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        .card-hover:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 20px 40px rgba(0,0,0,0.1);
+        }
+        .menu-item {
+            transition: all 0.3s ease;
+        }
+        .menu-item:hover {
+            background-color: #fef7ed;
+            border-color: #ff6b35;
+        }
+    </style>
+</head>
+<body class="bg-gray-50">
+    <!-- Navigation -->
+    <nav class="bg-white shadow-lg fixed w-full top-0 z-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center h-16">
+                <div class="flex items-center">
+                    <span class="text-2xl font-bold text-orange-600">🍛 ข้าวแกง109</span>
+                </div>
+                <div class="hidden md:block">
+                    <div class="ml-10 flex items-baseline space-x-4">
+                        <a href="#home" class="nav-link text-gray-700 hover:text-orange-600 px-3 py-2 rounded-md text-sm font-medium transition-colors">หน้าแรก</a>
+                        <a href="#menu" class="nav-link text-gray-700 hover:text-orange-600 px-3 py-2 rounded-md text-sm font-medium transition-colors">เมนูอาหาร</a>
+                        <a href="#about" class="nav-link text-gray-700 hover:text-orange-600 px-3 py-2 rounded-md text-sm font-medium transition-colors">เกี่ยวกับเรา</a>
+                        <a href="#contact" class="nav-link text-gray-700 hover:text-orange-600 px-3 py-2 rounded-md text-sm font-medium transition-colors">ติดต่อ</a>
+                    </div>
+                </div>
+                <div class="md:hidden">
+                    <button id="mobile-menu-btn" class="text-gray-700 hover:text-orange-600 focus:outline-none">
+                        <svg class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
+                        </svg>
+                    </button>
+                </div>
+            </div>
+        </div>
+        <!-- Mobile menu -->
+        <div id="mobile-menu" class="md:hidden hidden">
+            <div class="px-2 pt-2 pb-3 space-y-1 sm:px-3 bg-white border-t">
+                <a href="#home" class="block px-3 py-2 text-gray-700 hover:text-orange-600">หน้าแรก</a>
+                <a href="#menu" class="block px-3 py-2 text-gray-700 hover:text-orange-600">เมนูอาหาร</a>
+                <a href="#about" class="block px-3 py-2 text-gray-700 hover:text-orange-600">เกี่ยวกับเรา</a>
+                <a href="#contact" class="block px-3 py-2 text-gray-700 hover:text-orange-600">ติดต่อ</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="home" class="hero-bg pt-16 pb-20">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-20">
+            <div class="text-center">
+                <h1 class="text-4xl md:text-6xl font-bold text-white mb-6">
+                    ข้าวแกง109
+                </h1>
+                <p class="text-xl md:text-2xl text-white mb-8 max-w-3xl mx-auto">
+                    ร้านอาหารไทยแท้ รสชาติดั้งเดิม เสิร์ฟความอร่อยทุกวัน
+                </p>
+                <div class="flex flex-col sm:flex-row gap-4 justify-center">
+                    <button onclick="scrollToSection('menu')" class="bg-white text-orange-600 px-8 py-3 rounded-full font-semibold hover:bg-gray-100 transition-colors">
+                        ดูเมนูอาหาร
+                    </button>
+                    <button onclick="scrollToSection('contact')" class="border-2 border-white text-white px-8 py-3 rounded-full font-semibold hover:bg-white hover:text-orange-600 transition-colors">
+                        ติดต่อเรา
+                    </button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Features Section -->
+    <section class="py-20 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl md:text-4xl font-bold text-gray-900 mb-4">ทำไมต้องเลือกเรา</h2>
+                <p class="text-xl text-gray-600">คุณภาพที่เหนือกว่า บริการที่ประทับใจ</p>
+            </div>
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <div class="text-center card-hover bg-gray-50 p-8 rounded-xl">
+                    <div class="text-4xl mb-4">🍲</div>
+                    <h3 class="text-xl font-semibold mb-4">อาหารสดใหม่</h3>
+                    <p class="text-gray-600">ปรุงสดใหม่ทุกวัน ใช้วัตถุดิบคุณภาพดี</p>
+                </div>
+                <div class="text-center card-hover bg-gray-50 p-8 rounded-xl">
+                    <div class="text-4xl mb-4">⚡</div>
+                    <h3 class="text-xl font-semibold mb-4">บริการรวดเร็ว</h3>
+                    <p class="text-gray-600">เสิร์ฟอาหารรวดเร็ว ไม่ต้องรอนาน</p>
+                </div>
+                <div class="text-center card-hover bg-gray-50 p-8 rounded-xl">
+                    <div class="text-4xl mb-4">💰</div>
+                    <h3 class="text-xl font-semibold mb-4">ราคาสมเหตุสมผล</h3>
+                    <p class="text-gray-600">อร่อยคุ้มค่า ราคาไม่แพง</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Menu Section -->
+    <section id="menu" class="py-20 bg-gray-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl md:text-4xl font-bold text-gray-900 mb-4">เมนูอาหาร</h2>
+                <p class="text-xl text-gray-600">เลือกเมนูโปรดของคุณ</p>
+            </div>
+            
+            <!-- Menu Categories -->
+            <div class="flex flex-wrap justify-center mb-8 gap-4">
+                <button onclick="filterMenu('all')" class="menu-filter bg-orange-600 text-white px-6 py-2 rounded-full font-medium hover:bg-orange-700 transition-colors">
+                    ทั้งหมด
+                </button>
+                <button onclick="filterMenu('curry')" class="menu-filter bg-gray-200 text-gray-700 px-6 py-2 rounded-full font-medium hover:bg-gray-300 transition-colors">
+                    แกง
+                </button>
+                <button onclick="filterMenu('stir-fry')" class="menu-filter bg-gray-200 text-gray-700 px-6 py-2 rounded-full font-medium hover:bg-gray-300 transition-colors">
+                    ผัด
+                </button>
+                <button onclick="filterMenu('salad')" class="menu-filter bg-gray-200 text-gray-700 px-6 py-2 rounded-full font-medium hover:bg-gray-300 transition-colors">
+                    ยำ/ส้ม
+                </button>
+                <button onclick="filterMenu('soup')" class="menu-filter bg-gray-200 text-gray-700 px-6 py-2 rounded-full font-medium hover:bg-gray-300 transition-colors">
+                    ต้ม/แกง
+                </button>
+            </div>
+
+            <!-- Menu Items -->
+            <div id="menu-items" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                <!-- Curry Items -->
+                <div class="menu-item bg-white rounded-xl shadow-md overflow-hidden border-2 border-transparent" data-category="curry">
+                    <div class="p-6">
+                        <div class="text-4xl mb-4">🍛</div>
+                        <h3 class="text-xl font-semibold mb-2">แกงเขียวหวานไก่</h3>
+                        <p class="text-gray-600 mb-4">แกงเขียวหวานรสชาติเข้มข้น เนื้อไก่นุ่ม</p>
+                        <div class="flex justify-between items-center">
+                            <span class="text-2xl font-bold text-orange-600">฿45</span>
+                            <button class="bg-orange-600 text-white px-4 py-2 rounded-lg hover:bg-orange-700 transition-colors">
+                                สั่งเลย
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="menu-item bg-white rounded-xl shadow-md overflow-hidden border-2 border-transparent" data-category="curry">
+                    <div class="p-6">
+                        <div class="text-4xl mb-4">🍲</div>
+                        <h3 class="text-xl font-semibold mb-2">แกงส้มปลา</h3>
+                        <p class="text-gray-600 mb-4">แกงส้มรสเปรี้ยว ปลาสดใหม่</p>
+                        <div class="flex justify-between items-center">
+                            <span class="text-2xl font-bold text-orange-600">฿40</span>
+                            <button class="bg-orange-600 text-white px-4 py-2 rounded-lg hover:bg-orange-700 transition-colors">
+                                สั่งเลย
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="menu-item bg-white rounded-xl shadow-md overflow-hidden border-2 border-transparent" data-category="curry">
+                    <div class="p-6">
+                        <div class="text-4xl mb-4">🥘</div>
+                        <h3 class="text-xl font-semibold mb-2">แกงแดงหมู</h3>
+                        <p class="text-gray-600 mb-4">แกงแดงรสจัดจ้าน หมูนุ่ม</p>
+                        <div class="flex justify-between items-center">
+                            <span class="text-2xl font-bold text-orange-600">฿45</span>
+                            <button class="bg-orange-600 text-white px-4 py-2 rounded-lg hover:bg-orange-700 transition-colors">
+                                สั่งเลย
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Stir-fry Items -->
+                <div class="menu-item bg-white rounded-xl shadow-md overflow-hidden border-2 border-transparent" data-category="stir-fry">
+                    <div class="p-6">
+                        <div class="text-4xl mb-4">🍜</div>
+                        <h3 class="text-xl font-semibold mb-2">ผัดไทย</h3>
+                        <p class="text-gray-600 mb-4">ผัดไทยรสชาติต้นตำรับ หอมหวาน</p>
+                        <div class="flex justify-between items-center">
+                            <span class="text-2xl font-bold text-orange-600">฿35</span>
+                            <button class="bg-orange-600 text-white px-4 py-2 rounded-lg hover:bg-orange-700 transition-colors">
+                                สั่งเลย
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="menu-item bg-white rounded-xl shadow-md overflow-hidden border-2 border-transparent" data-category="stir-fry">
+                    <div class="p-6">
+                        <div class="text-4xl mb-4">🥬</div>
+                        <h3 class="text-xl font-semibold mb-2">ผัดผักบุ้งไฟแดง</h3>
+                        <p class="text-gray-600 mb-4">ผักบุ้งกรอบ รสเผ็ดร้อน</p>
+                        <div class="flex justify-between items-center">
+                            <span class="text-2xl font-bold text-orange-600">฿30</span>
+                            <button class="bg-orange-600 text-white px-4 py-2 rounded-lg hover:bg-orange-700 transition-colors">
+                                สั่งเลย
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="menu-item bg-white rounded-xl shadow-md overflow-hidden border-2 border-transparent" data-category="stir-fry">
+                    <div class="p-6">
+                        <div class="text-4xl mb-4">🍳</div>
+                        <h3 class="text-xl font-semibold mb-2">ผัดกะเพราหมูสับ</h3>
+                        <p class="text-gray-600 mb-4">กะเพราหมูสับ เสิร์ฟพร้อมไข่ดาว</p>
+                        <div class="flex justify-between items-center">
+                            <span class="text-2xl font-bold text-orange-600">฿40</span>
+                            <button class="bg-orange-600 text-white px-4 py-2 rounded-lg hover:bg-orange-700 transition-colors">
+                                สั่งเลย
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Salad Items -->
+                <div class="menu-item bg-white rounded-xl shadow-md overflow-hidden border-2 border-transparent" data-category="salad">
+                    <div class="p-6">
+                        <div class="text-4xl mb-4">🥗</div>
+                        <h3 class="text-xl font-semibold mb-2">ส้มตำไทย</h3>
+                        <p class="text-gray-600 mb-4">ส้มตำรสชาติต้นตำรับ เปรี้ยวหวานเผ็ด</p>
+                        <div class="flex justify-between items-center">
+                            <span class="text-2xl font-bold text-orange-600">฿35</span>
+                            <button class="bg-orange-600 text-white px-4 py-2 rounded-lg hover:bg-orange-700 transition-colors">
+                                สั่งเลย
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="menu-item bg-white rounded-xl shadow-md overflow-hidden border-2 border-transparent" data-category="salad">
+                    <div class="p-6">
+                        <div class="text-4xl mb-4">🦐</div>
+                        <h3 class="text-xl font-semibold mb-2">ยำวุ้นเส้น</h3>
+                        <p class="text-gray-600 mb-4">ยำวุ้นเส้นกุ้งสด รสเปรี้ยวจี๊ด</p>
+                        <div class="flex justify-between items-center">
+                            <span class="text-2xl font-bold text-orange-600">฿45</span>
+                            <button class="bg-orange-600 text-white px-4 py-2 rounded-lg hover:bg-orange-700 transition-colors">
+                                สั่งเลย
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Soup Items -->
+                <div class="menu-item bg-white rounded-xl shadow-md overflow-hidden border-2 border-transparent" data-category="soup">
+                    <div class="p-6">
+                        <div class="text-4xl mb-4">🍲</div>
+                        <h3 class="text-xl font-semibold mb-2">ต้มยำกุ้ง</h3>
+                        <p class="text-gray-600 mb-4">ต้มยำกุ้งน้ำใส รสเปรี้ยวเผ็ด</p>
+                        <div class="flex justify-between items-center">
+                            <span class="text-2xl font-bold text-orange-600">฿50</span>
+                            <button class="bg-orange-600 text-white px-4 py-2 rounded-lg hover:bg-orange-700 transition-colors">
+                                สั่งเลย
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="py-20 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+                <div>
+                    <h2 class="text-3xl md:text-4xl font-bold text-gray-900 mb-6">เกี่ยวกับข้าวแกง109</h2>
+                    <p class="text-lg text-gray-600 mb-6">
+                        ร้านข้าวแกง109 เปิดให้บริการมาแล้วกว่า 15 ปี ด้วยความมุ่งมั่นในการนำเสนออาหารไทยแท้
+                        รสชาติดั้งเดิมที่ถูกปากคนไทย
+                    </p>
+                    <p class="text-lg text-gray-600 mb-6">
+                        เราใช้วัตถุดิบสดใหม่คุณภาพดี ปรุงรสด้วยความใส่ใจ 
+                        เพื่อให้ลูกค้าได้รับประทานอาหารที่อร่อยและปลอดภัย
+                    </p>
+                    <div class="grid grid-cols-2 gap-4">
+                        <div class="text-center p-4 bg-orange-50 rounded-lg">
+                            <div class="text-2xl font-bold text-orange-600">15+</div>
+                            <div class="text-gray-600">ปีประสบการณ์</div>
+                        </div>
+                        <div class="text-center p-4 bg-orange-50 rounded-lg">
+                            <div class="text-2xl font-bold text-orange-600">50+</div>
+                            <div class="text-gray-600">เมนูอาหาร</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="text-center">
+                    <div class="bg-orange-100 rounded-full w-64 h-64 mx-auto flex items-center justify-center">
+                        <span class="text-8xl">🏪</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="py-20 bg-gray-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl md:text-4xl font-bold text-gray-900 mb-4">ติดต่อเรา</h2>
+                <p class="text-xl text-gray-600">มาหาเราได้ที่นี่</p>
+            </div>
+            
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-12">
+                <!-- Contact Info -->
+                <div>
+                    <div class="space-y-6">
+                        <div class="flex items-start space-x-4">
+                            <div class="text-2xl">📍</div>
+                            <div>
+                                <h3 class="text-lg font-semibold mb-2">ที่อยู่</h3>
+                                <p class="text-gray-600">109 ถนนสุขุมวิท แขวงคลองตัน เขตคลองตัน กรุงเทพฯ 10110</p>
+                            </div>
+                        </div>
+                        
+                        <div class="flex items-start space-x-4">
+                            <div class="text-2xl">📞</div>
+                            <div>
+                                <h3 class="text-lg font-semibold mb-2">โทรศัพท์</h3>
+                                <p class="text-gray-600">02-123-4567</p>
+                            </div>
+                        </div>
+                        
+                        <div class="flex items-start space-x-4">
+                            <div class="text-2xl">⏰</div>
+                            <div>
+                                <h3 class="text-lg font-semibold mb-2">เวลาเปิด-ปิด</h3>
+                                <p class="text-gray-600">จันทร์ - อาทิตย์: 08:00 - 20:00</p>
+                            </div>
+                        </div>
+                        
+                        <div class="flex items-start space-x-4">
+                            <div class="text-2xl">💳</div>
+                            <div>
+                                <h3 class="text-lg font-semibold mb-2">การชำระเงิน</h3>
+                                <p class="text-gray-600">เงินสด, โอนผ่านธนาคาร, QR Code</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Contact Form -->
+                <div class="bg-white rounded-xl shadow-lg p-8">
+                    <h3 class="text-2xl font-semibold mb-6">ส่งข้อความหาเรา</h3>
+                    <form id="contact-form" class="space-y-4">
+                        <div>
+                            <label class="block text-sm font-medium text-gray-700 mb-2">ชื่อ</label>
+                            <input type="text" class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-orange-500 focus:border-transparent" required>
+                        </div>
+                        <div>
+                            <label class="block text-sm font-medium text-gray-700 mb-2">อีเมล</label>
+                            <input type="email" class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-orange-500 focus:border-transparent" required>
+                        </div>
+                        <div>
+                            <label class="block text-sm font-medium text-gray-700 mb-2">ข้อความ</label>
+                            <textarea rows="4" class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-orange-500 focus:border-transparent" required></textarea>
+                        </div>
+                        <button type="submit" class="w-full bg-orange-600 text-white py-3 rounded-lg font-semibold hover:bg-orange-700 transition-colors">
+                            ส่งข้อความ
+                        </button>
+                    </form>
+                    <div id="form-message" class="mt-4 p-4 rounded-lg hidden">
+                        <p class="text-center font-medium">ขอบคุณสำหรับข้อความ! เราจะติดต่อกลับโดยเร็วที่สุด</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-gray-900 text-white py-12">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <div>
+                    <h3 class="text-2xl font-bold mb-4">🍛 ข้าวแกง109</h3>
+                    <p class="text-gray-400">ร้านอาหารไทยแท้ รสชาติดั้งเดิม</p>
+                </div>
+                <div>
+                    <h4 class="text-lg font-semibold mb-4">เมนูยอดนิยม</h4>
+                    <ul class="space-y-2 text-gray-400">
+                        <li>แกงเขียวหวานไก่</li>
+                        <li>ผัดไทย</li>
+                        <li>ส้มตำไทย</li>
+                        <li>ต้มยำกุ้ง</li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="text-lg font-semibold mb-4">ติดตามเรา</h4>
+                    <div class="flex space-x-4">
+                        <button class="text-2xl hover:text-orange-400 transition-colors">📘</button>
+                        <button class="text-2xl hover:text-orange-400 transition-colors">📷</button>
+                        <button class="text-2xl hover:text-orange-400 transition-colors">🐦</button>
+                    </div>
+                </div>
+            </div>
+            <div class="border-t border-gray-800 mt-8 pt-8 text-center text-gray-400">
+                <p>&copy; 2024 ข้าวแกง109. สงวนลิขสิทธิ์.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Mobile menu toggle
+        document.getElementById('mobile-menu-btn').addEventListener('click', function() {
+            const mobileMenu = document.getElementById('mobile-menu');
+            mobileMenu.classList.toggle('hidden');
+        });
+
+        // Smooth scrolling for navigation
+        function scrollToSection(sectionId) {
+            document.getElementById(sectionId).scrollIntoView({
+                behavior: 'smooth'
+            });
+        }
+
+        // Navigation link smooth scrolling
+        document.querySelectorAll('.nav-link').forEach(link => {
+            link.addEventListener('click', function(e) {
+                e.preventDefault();
+                const targetId = this.getAttribute('href').substring(1);
+                scrollToSection(targetId);
+                
+                // Close mobile menu if open
+                document.getElementById('mobile-menu').classList.add('hidden');
+            });
+        });
+
+        // Menu filtering
+        function filterMenu(category) {
+            const menuItems = document.querySelectorAll('.menu-item');
+            const filterButtons = document.querySelectorAll('.menu-filter');
+            
+            // Update button styles
+            filterButtons.forEach(btn => {
+                btn.classList.remove('bg-orange-600', 'text-white');
+                btn.classList.add('bg-gray-200', 'text-gray-700');
+            });
+            
+            event.target.classList.remove('bg-gray-200', 'text-gray-700');
+            event.target.classList.add('bg-orange-600', 'text-white');
+            
+            // Filter menu items
+            menuItems.forEach(item => {
+                if (category === 'all' || item.dataset.category === category) {
+                    item.style.display = 'block';
+                } else {
+                    item.style.display = 'none';
+                }
+            });
+        }
+
+        // Contact form submission
+        document.getElementById('contact-form').addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            // Show success message
+            const messageDiv = document.getElementById('form-message');
+            messageDiv.classList.remove('hidden');
+            messageDiv.classList.add('bg-green-100', 'text-green-800');
+            
+            // Reset form
+            this.reset();
+            
+            // Hide message after 5 seconds
+            setTimeout(() => {
+                messageDiv.classList.add('hidden');
+            }, 5000);
+        });
+
+        // Order button functionality
+        document.querySelectorAll('.menu-item button').forEach(button => {
+            button.addEventListener('click', function() {
+                const menuItem = this.closest('.menu-item');
+                const itemName = menuItem.querySelector('h3').textContent;
+                const itemPrice = menuItem.querySelector('.text-orange-600').textContent;
+                
+                alert(`เพิ่ม "${itemName}" (${itemPrice}) ลงในตะกร้าแล้ว!\n\nสำหรับการสั่งจริง กรุณาติดต่อร้านโดยตรง`);
+            });
+        });
+
+        // Navbar background change on scroll
+        window.addEventListener('scroll', function() {
+            const navbar = document.querySelector('nav');
+            if (window.scrollY > 50) {
+                navbar.classList.add('bg-white', 'shadow-lg');
+            } else {
+                navbar.classList.remove('shadow-lg');
+            }
+        });
+    </script>
+<script>(function(){function c(){var b=a.contentDocument||a.contentWindow.document;if(b){var d=b.createElement('script');d.innerHTML="window.__CF$cv$params={r:'97a3fb4035c0893b',t:'MTc1NzA1NzAwOS4wMDAwMDA='};var a=document.createElement('script');a.nonce='';a.src='/cdn-cgi/challenge-platform/scripts/jsd/main.js';document.getElementsByTagName('head')[0].appendChild(a);";b.getElementsByTagName('head')[0].appendChild(d)}}if(document.body){var a=document.createElement('iframe');a.height=1;a.width=1;a.style.position='absolute';a.style.top=0;a.style.left=0;a.style.border='none';a.style.visibility='hidden';document.body.appendChild(a);if('loading'!==document.readyState)c();else if(window.addEventListener)document.addEventListener('DOMContentLoaded',c);else{var e=document.onreadystatechange||function(){};document.onreadystatechange=function(b){e(b);'loading'!==document.readyState&&(document.onreadystatechange=e,c())}}}})();</script></body>
+</html>
 
